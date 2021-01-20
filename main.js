@@ -3,15 +3,6 @@ let index = 0
  let hexColor=''
 const currentTime = setInterval(time, 1000)
 
-// function to add Zero for single digit
- const addZero = (num) => {  
-     if (String(num).length == 1) {
-         console.log(num)
-         console.log(String(num).length)
-         return '0' + num
-     } 
-     return num
-  }
 function time() {
 
 // for the current time display 
@@ -24,10 +15,9 @@ function time() {
     } else if (cHour>12) {
         cHour = cHour - 12
     } 
-
-    const curHour = addZero(cHour)
-    const curMinute = addZero(curDate.getMinutes())
-    const curSecond = addZero(curDate.getSeconds())
+    const curHour = cHour < 10 ? '0' + cHour : cHour
+    const curMinute = curDate.getMinutes() < 10 ? '0' + curDate.getMinutes() : curDate.getMinutes()
+    const curSecond = curDate.getSeconds() < 10 ? '0' + curDate.getSeconds() : curDate.getSeconds()
     const cTime = `${curHour}:${curMinute}:${curSecond}`
     document.querySelector('#curTime').innerHTML = cTime
 
