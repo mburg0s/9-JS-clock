@@ -5,8 +5,8 @@ let index = 0
 const currentTime = setInterval(time, 1000)
 
 function time() {
-// for the current time display 
 
+// for the current time display 
     const curDate = new Date()
     let curHour = curDate.getHours()
     if (curHour===0) {
@@ -26,13 +26,15 @@ function time() {
     index++
 }
 
-// setting color font size and alignment
+// setting color font size and alignment for the clock
  document.querySelector('#curTime').style.color = 'gray'
  document.querySelector('#curTime').style.fontFamily = 'Cursive'
  document.querySelector('#curTime').style.fontSize = '100px'
  document.querySelector('#curTime').style.textAlign = 'center'
  document.querySelector('#curTime').style.marginTop = '100px'
- document.querySelector('#curBGC').style.color = 'gray'
+
+// setting color font size and alignment for the background color
+document.querySelector('#curBGC').style.color = 'gray'
  document.querySelector('#curBGC').style.fontFamily = 'Cursive'
  document.querySelector('#curBGC').style.fontSize = '80px'
  document.querySelector('#curBGC').style.textAlign = 'center'
